@@ -23,11 +23,10 @@ const fr = {
     heroLabel: "Designer UX/UI — Montréal",
     currently: "Actuellement",
     currentRole: "UX/UI Designer chez Nutcache",
-    // Copy proposal built from the CV only — to validate with Samya.
-    heroTitle: "Je conçois des produits SaaS B2B,",
-    heroTitleEmphasis: "des règles métier jusqu'au pixel.",
+    heroTitle: "Designer UX/UI, je mène les problématiques produit de bout en bout,",
+    heroTitleEmphasis: "main dans la main avec le développement.",
     heroIntro:
-      "Designer UX/UI au sein d'une équipe produit à Montréal. Avant le produit, cinq ans de design graphique : identités, packaging, éditions. J'en garde une forte expertise visuelle, au service d'expériences claires et cohérentes.",
+      "Aujourd'hui au sein d'une équipe produit à Montréal. Avant le produit, cinq ans de design graphique : identités, packaging, éditions. J'en garde une forte expertise visuelle, au service d'expériences claires et cohérentes.",
     heroCta: "Voir les travaux",
     workLabel: "Travaux choisis",
     workCount: "études de cas",

@@ -22,7 +22,7 @@
   --color-brick: #6b2b20;
 
   --text-*: initial;
-  --text-display: clamp(2.625rem, 1.35rem + 5.4vw, 6.5rem);
+  --text-display: clamp(2.375rem, 1.3rem + 4.6vw, 5.75rem);
   --text-display--line-height: 1.02;
   --text-display--letter-spacing: -0.022em;
   --text-h1: clamp(2.25rem, 1.45rem + 3.4vw, 4.5rem);
