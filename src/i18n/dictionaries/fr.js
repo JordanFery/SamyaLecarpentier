@@ -10,6 +10,7 @@ const fr = {
     skipToContent: "Aller au contenu",
     mainNav: "Navigation principale",
     closeMenu: "Fermer le menu",
+    darkMode: "Mode sombre",
     switchLanguage: "Read this page in English",
     tableOfContents: "Sommaire de l'étude de cas",
     newTab: "(nouvel onglet)",

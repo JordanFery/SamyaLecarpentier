@@ -4,6 +4,8 @@
    Design tokens
    Paper / ink palette, one signal colour taken from Samya's CV, and three
    muted plate colours reserved for project covers.
+   Paper, ink, graphite and rule swap in the dark theme; night and daylight
+   never do (text on the signal yellow, text on plates).
    Spacing uses Tailwind's 4px base (--spacing). Radius: none, by design.
    ========================================================================== */
 
@@ -17,6 +19,9 @@
   --color-graphite: #5c574f;
   --color-rule: #d6d0c4;
   --color-signal: #ffd400;
+  --color-night: #1a1917;
+  --color-daylight: #f3f0e8;
+  --color-footer: #1a1917;
   --color-forest: #26382e;
   --color-ultramarine: #262c57;
   --color-brick: #6b2b20;
@@ -46,6 +51,18 @@
   --text-label--letter-spacing: 0.14em;
 
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Dark theme: espresso paper and cream ink rather than black. Set on <html>
+   before first paint by the script in the root layout. */
+:root[data-theme="dark"] {
+  --color-paper: #211c18;
+  --color-paper-deep: #2b2520;
+  --color-ink: #eee7da;
+  --color-graphite: #b2a898;
+  --color-rule: #463d35;
+  --color-footer: #161210;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -139,7 +156,7 @@
 
   ::selection {
     background: var(--color-signal);
-    color: var(--color-ink);
+    color: var(--color-night);
   }
 
   :focus-visible {
@@ -310,6 +327,12 @@
 
 .site-header {
   view-transition-name: site-header;
+}
+
+/* Theme toggle: moon in light mode, sun in dark mode. */
+:root[data-theme="dark"] .theme-toggle-moon,
+:root:not([data-theme="dark"]) .theme-toggle-sun {
+  display: none;
 }
 
 /* View transitions: page fade, shared cover morph, anchored header. */

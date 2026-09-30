@@ -4,6 +4,7 @@ import { newsreader, schibsted } from "../fonts";
 import { alternatesFor, isLocale, locales, openGraphLocales, otherLocale, paths } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { profile } from "@/content/profile";
+import { themeColors, themeScript } from "@/lib/theme";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 
@@ -17,7 +18,10 @@ export function generateStaticParams() {
 }
 
 export const viewport = {
-  themeColor: "#f3f0e8",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: themeColors.light },
+    { media: "(prefers-color-scheme: dark)", color: themeColors.dark },
+  ],
 };
 
 export async function generateMetadata({ params }) {
@@ -60,15 +64,20 @@ export default async function RootLayout({ children, params }) {
   const dict = getDictionary(lang);
 
   return (
+    // data-theme is set by themeScript before hydration, hence the warning suppression.
     <html
       lang={lang}
       data-scroll-behavior="smooth"
       className={`${newsreader.variable} ${schibsted.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <a
           href="#content"
-          className="label sr-only z-50 bg-signal px-4 py-3 text-ink focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+          className="label sr-only z-50 bg-signal px-4 py-3 text-night focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
         >
           {dict.a11y.skipToContent}
         </a>

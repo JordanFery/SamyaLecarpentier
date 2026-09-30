@@ -10,6 +10,7 @@ const en = {
     skipToContent: "Skip to content",
     mainNav: "Main navigation",
     closeMenu: "Close menu",
+    darkMode: "Dark mode",
     switchLanguage: "Lire cette page en français",
     tableOfContents: "Case study contents",
     newTab: "(opens in a new tab)",

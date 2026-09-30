@@ -6,7 +6,7 @@ const accents = {
   forest: "bg-forest",
   ultramarine: "bg-ultramarine",
   brick: "bg-brick",
-  ink: "bg-ink",
+  ink: "bg-night",
 };
 
 const ratios = {
@@ -45,8 +45,8 @@ export default function ProjectPlate({ project, ratio = "landscape", sizes = "10
               className={cover.fit === "contain" ? "object-contain" : "object-cover"}
             />
           ) : (
-            <div aria-hidden="true" className="flex h-full flex-col justify-between p-[max(1rem,5cqi)] text-paper">
-              <div className="label flex justify-between text-paper/70">
+            <div aria-hidden="true" className="flex h-full flex-col justify-between p-[max(1rem,5cqi)] text-daylight">
+              <div className="label flex justify-between text-daylight/70">
                 <span>{project.client}</span>
                 <span>{project.number}</span>
               </div>

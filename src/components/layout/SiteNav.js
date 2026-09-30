@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { localeNames, otherLocale, paths, translatePath } from "@/i18n/config";
+import ThemeToggle from "./ThemeToggle";
 
 function navItems(lang, pathname, labels) {
   const aboutPath = paths.about(lang);
@@ -60,7 +61,8 @@ export default function SiteNav({ lang, labels }) {
               </Link>
             </li>
           ))}
-          <li className="border-l border-rule pl-4">
+          <li className="flex items-center border-l border-rule pl-4">
+            <ThemeToggle label={labels.darkMode} />
             <LanguageSwitch lang={lang} pathname={pathname} label={labels.switchLanguage} />
           </li>
         </ul>
@@ -83,7 +85,10 @@ export default function SiteNav({ lang, labels }) {
       >
         <div className="container-site flex h-full flex-col">
           <div className="flex h-(--header-height) items-center justify-between border-b border-rule">
-            <LanguageSwitch lang={lang} pathname={pathname} label={labels.switchLanguage} className="-ml-3" />
+            <div className="-ml-3 flex items-center">
+              <LanguageSwitch lang={lang} pathname={pathname} label={labels.switchLanguage} />
+              <ThemeToggle label={labels.darkMode} />
+            </div>
             <form method="dialog">
               <button type="submit" className="label -mr-3 inline-flex min-h-11 items-center px-3 text-ink">
                 {labels.closeMenu}
